@@ -108,6 +108,99 @@ var pickerDescribe = app.picker.create({
     ]
 });
 
+var pickerDescribe = app.picker.create({
+  inputEl: '#demo-picker-describe2',
+    rotateEffect: true,
+    value: [
+      today.getHours(),
+      today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes()
+    ],
+    formatValue: function (values) {
+      return values[0] + ':' + values[1];
+    },
+    cols: [
+      {
+        textAlign: 'left',
+        values: ('00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30').split(' ')
+      },
+      // Divider
+    {
+      divider: true,
+      content: ':'
+    },
+    // Minutes
+    {
+      values: (function () {
+        var arr = [];
+        for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
+          return arr;
+      })(),
+    }
+    ]
+});
+
+var pickerDescribe = app.picker.create({
+  inputEl: '#demo-picker-describe3',
+    rotateEffect: true,
+    value: [
+      today.getHours(),
+      today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes()
+    ],
+    formatValue: function (values) {
+      return values[0] + ':' + values[1];
+    },
+    cols: [
+      {
+        textAlign: 'left',
+        values: ('00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30').split(' ')
+      },
+      // Divider
+    {
+      divider: true,
+      content: ':'
+    },
+    // Minutes
+    {
+      values: (function () {
+        var arr = [];
+        for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
+          return arr;
+      })(),
+    }
+    ]
+});
+
+var pickerDescribe = app.picker.create({
+  inputEl: '#demo-picker-describe4',
+    rotateEffect: true,
+    value: [
+      today.getHours(),
+      today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes()
+    ],
+    formatValue: function (values) {
+      return values[0] + ':' + values[1];
+    },
+    cols: [
+      {
+        textAlign: 'left',
+        values: ('00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30').split(' ')
+      },
+      // Divider
+    {
+      divider: true,
+      content: ':'
+    },
+    // Minutes
+    {
+      values: (function () {
+        var arr = [];
+        for (var i = 0; i <= 59; i++) { arr.push(i < 10 ? '0' + i : i); }
+          return arr;
+      })(),
+    }
+    ]
+});
+
 // var today = new Date();
 var pickerInline = app.picker.create({
   containerEl: '#demo-picker-date-container',
