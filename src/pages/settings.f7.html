@@ -25,7 +25,38 @@
             })
           </script>
       </div>
-
+      <div class="block block-strong">
+        <textarea id="text3">お食事の時間です</textarea>
+        <button id="speak-btn3">再生</butt1on>
+        
+        <script>
+          const text3     = document.querySelector('#text3')
+          const speakBtn3 = document.querySelector('#speak-btn3')
+        
+          speakBtn3.addEventListener('click', function() {
+            // 発言を作成
+            const uttr3 = new SpeechSynthesisUtterance(text3.value)
+            // 発言を再生 (発言キューに発言を追加)
+            speechSynthesis.speak(uttr3)
+          })
+        </script>
+      </div>
+      <div class="block block-strong">
+        <textarea id="text4">お風呂の時間です</textarea>
+        <button id="speak-btn4">再生</butt1on>
+        
+        <script>
+          const text4     = document.querySelector('#text4')
+          const speakBtn4 = document.querySelector('#speak-btn4')
+        
+          speakBtn4.addEventListener('click', function() {
+            // 発言を作成
+            const uttr4 = new SpeechSynthesisUtterance(text4.value)
+            // 発言を再生 (発言キューに発言を追加)
+            speechSynthesis.speak(uttr4)
+          })
+        </script>
+      </div>
 
 
       <div class="block-title">Inline Picker / Date-time</div>

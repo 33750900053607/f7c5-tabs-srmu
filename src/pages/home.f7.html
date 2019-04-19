@@ -85,18 +85,18 @@
 
       <div class="block-title">Speech test</div>
       <div class="block block-strong">
-          <textarea id="text">おやすみになる時間です</textarea>
-          <button id="speak-btn">再生</butt1on>
+          <textarea id="text0">おやすみになる時間です</textarea>
+          <button id="speak-btn0">再生</butt1on>
           
           <script>
-            const text     = document.querySelector('#text')
-            const speakBtn = document.querySelector('#speak-btn')
+            const text0     = document.querySelector('#text0')
+            const speakBtn0 = document.querySelector('#speak-btn0')
           
-            speakBtn.addEventListener('click', function() {
+            speakBtn0.addEventListener('click', function() {
               // 発言を作成
-              const uttr = new SpeechSynthesisUtterance(text.value)
+              const uttr0 = new SpeechSynthesisUtterance(text0.value)
               // 発言を再生 (発言キューに発言を追加)
-              speechSynthesis.speak(uttr)
+        speechSynthesis.speak(uttr0)
             })
           </script>
       </div>

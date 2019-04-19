@@ -16,7 +16,7 @@
   <div class="page-content">
 
     <div class="block-title">About My App</div>
-    <div>
+    <div class="block block-strong">
         <input type="checkbox" id="checkbox"> アラームをセット
         <br>
         <select id="hour"></select>時
@@ -29,6 +29,12 @@
         </div>
         <!-- <audio src="sound.mp3" id="sound"></audio>
         -->
+        <div>
+          <textarea id="text">おやすみになる時間です</textarea>
+          <button id="speak-btn">再生</butt1on>
+        </div>
+    
+
         
         <script>
           // クリップボードにあるbase64文字列を貼り付けます
@@ -49,6 +55,10 @@
             // var sound = document.getElementById("sound");
   
             var time = new Date;
+
+            const text     = document.querySelector('#text')
+            const speakBtn = document.querySelector('#speak-btn')
+          
   
             select_option = "";
             for (var i=0; i<=23; i++) {
@@ -93,6 +103,13 @@
             sound.onended = function() {
                 alarm_stop();
             };
+
+            speakBtn.addEventListener('click', function() {
+              // 発言を作成
+              const uttr = new SpeechSynthesisUtterance(text.value)
+              // 発言を再生 (発言キューに発言を追加)
+              speechSynthesis.speak(uttr)
+            })
   
             function main() {
                 var time = new Date;
@@ -100,6 +117,7 @@
                 if (alarm_set && alarm_hour == time.getHours() && alarm_minute == time.getMinutes()) {
                     sound.play();
                     alert("設定時刻です");
+                    sound.play();
                     alarm_set = false;
                     alarm_dialog.style.display = "block";
                 } else if (alarm_set2 && alarm_minute != time.getMinutes()) {
@@ -121,7 +139,22 @@
             // 音を鳴らします
             sound.play();
           </script>
+          <!--
+          <script>
+            const text     = document.querySelector('#text')
+            const speakBtn = document.querySelector('#speak-btn')
+          
+            speakBtn.addEventListener('click', function() {
+              // 発言を作成
+              const uttr = new SpeechSynthesisUtterance(text.value)
+              // 発言を再生 (発言キューに発言を追加)
+              speechSynthesis.speak(uttr)
+            })
+            
+          </script>
+        -->
     </div>
+
 <!--
 
     <div class="block block-strong">
